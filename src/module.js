@@ -1,7 +1,13 @@
 import {TeamCityDatasource} from './datasource';
 import {TeamCityDatasourceQueryCtrl} from './query_ctrl';
 
-class TeamCityConfigCtrl {}
+class TeamCityConfigCtrl {
+    constructor($scope, datasourceSrv) {
+        this.current.jsonData = this.current.jsonData || {};
+        this.current.jsonData.useAccessToken = this.current.jsonData.useAccessToken || false;
+        this.current.jsonData.accessToken = this.current.jsonData.accessToken || '';
+    }
+}
 TeamCityConfigCtrl.templateUrl = 'partials/config.html';
 
 class TeamCityQueryOptionsCtrl {}

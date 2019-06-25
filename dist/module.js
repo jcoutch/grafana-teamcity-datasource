@@ -11,8 +11,12 @@ var _query_ctrl = require('./query_ctrl');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var TeamCityConfigCtrl = function TeamCityConfigCtrl() {
+var TeamCityConfigCtrl = function TeamCityConfigCtrl($scope, datasourceSrv) {
     _classCallCheck(this, TeamCityConfigCtrl);
+
+    this.current.jsonData = this.current.jsonData || {};
+    this.current.jsonData.useAccessToken = this.current.jsonData.useAccessToken || false;
+    this.current.jsonData.accessToken = this.current.jsonData.accessToken || '';
 };
 
 TeamCityConfigCtrl.templateUrl = 'partials/config.html';

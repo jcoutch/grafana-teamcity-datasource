@@ -11,8 +11,11 @@ export class TeamCityDatasource {
         this.templateSrv = templateSrv;
         this.withCredentials = instanceSettings.withCredentials;
         this.headers = {'Content-Type': 'application/json'};
-        if (typeof instanceSettings.basicAuth === 'string' && instanceSettings.basicAuth.length > 0) {
-          this.headers['Authorization'] = instanceSettings.basicAuth;
+
+        if (instanceSettings.jsonData.useAccessToken) {
+            this.headers['Authorization'] = "Bearer " + instanceSettings.jsonData.accessToken;
+        } else if (typeof instanceSettings.basicAuth === 'string' && instanceSettings.basicAuth.length > 0) {
+            this.headers['Authorization'] = instanceSettings.basicAuth;
         }
 
         this.targetTypes = [ 'build' ]
