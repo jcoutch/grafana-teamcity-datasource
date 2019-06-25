@@ -3,24 +3,21 @@
 <h3 class="page-heading">Access Tokens</h3>
 <div class="gf-form-group">
   <div class="gf-form-inline">
+    <gf-form-checkbox class="gf-form" label="Use Access Token" checked="ctrl.current.jsonData.useAccessToken"/>
     <div class="gf-form">
-      <span class="gf-form-label width-10">Use Access Token</span>
-      <input class="gf-form-input" type="checkbox"
-        ng-model="ctrl.current.jsonData.useAccessToken"
-        placeholder="at-enable header"
-        [disabled]="!ctrl.current.basicAuth"/>
-
-      <span class="gf-form-label width-10">Access Token</span>
-      <input class="gf-form-input" type="text"
-        ng-model="ctrl.current.jsonData.accessToken"
-        [disabled]="ctrl.current.jsonData.useAccessToken && !ctrl.current.basicAuth"
-        placeholder="at-token header"/>
-
-      <div>
-          For more details on using Personal Access Tokens for authentication, check out the 
-          <a href="https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-RESTAuthentication">Rest Authentication</a>
-          documentation for TeamCity.
-      </div>
+        <span class="gf-form-label width-8">Access Token</span>
+        <input class="gf-form-input width-30" type="text"
+          ng-model="ctrl.current.jsonData.accessToken"
+          placeholder="at-token header"/>
     </div>
   </div>
 </div>
+<div class="gf-form-group">
+  <div class="gf-form-inline">
+    <div class="gf-form">
+      For more details on using Personal Access Tokens for authentication, check out the&nbsp;
+      <a href="https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-RESTAuthentication">[Rest Authentication]</a>
+      &nbsp;documentation for TeamCity.
+    </div>
+  </div>
+</div>  
